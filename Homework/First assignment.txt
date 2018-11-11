@@ -1,0 +1,44 @@
+Assignment:
+
+Create a console application that will allow user to create and store teams of heroes and villains.
+
+1. Create a separate class to communicate with user inputs via console and translate the input commands into application actions.
+It must have the following functionalities:
+
+  * Command: '-l' => Try to load the previous state of an application
+  * Command: '-s' => Save current changes
+  * Command: '-v' => View the list of all characters
+  * Command: '-c' => Create character, initializes the character creation flow
+  * Command: '-d "CharacterName"' => Delete character by name
+  * Command: '-q' => Exit the application
+
+-l => Try to load a list of characters from the JSON file.
+-s => Save the current state of the list to the JSON file.
+-v => Display the list of currently created characters in the following format:
+
+'Side:'
+  - Name {if character has Nickname, also append a.k.a. 'Nickname'} - "Description goes here."
+
+Example:
+
+'Heroes:'
+  - Batman a.k.a. 'Batsy' - "Lives in the bat lair with his butler."
+
+'Villains:'
+  - Joker - "Crazy clown."
+
+-c => Create a new character. Offer user to enter the following attributes while creating:
+
+  * Name (UNIQUE)
+  * Nickname
+  * Side (Hero/Villain)
+  * Description (Optional) - defaults to "Just another hero/villain." (hero/villain in description should be based on the 'Side' value)
+
+-d "CharacterName" => Delete the character by name.
+-q => Check if there are any unsaved changes and offer to user to save them before closing the application. Close the app afterwards no matter the choice.
+
+Note:
+
+  * Characters should be stored in the same data structure in memory, split them to two groups only if user types '-v' command to display the current state of the list.
+
+P.S. - Use NuGet Package Manager for your project to install the Newtonsoft.Json library for easier object (de)serialization.
